@@ -82,15 +82,29 @@ function renderDocuments(documents) {
         documentContainer.innerHTML += documentElement;
     });
 }
+function toggleModal() {
+    console.log("holaaa");
+    var modal = document.getElementsByClassName("modal");
+    modal[0].classList.toggle("hidden");
+    modal[0].classList.toggle("grid");
+    modal[1].classList.toggle("hidden");
+    modal[1].classList.toggle("grid");
+    var body = document.querySelector("body");
+    body.classList.toggle("overflow-hidden");
+}
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var documents;
+        var documents, createDocBtn, closeModalBtn;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, getDocuments()];
                 case 1:
                     documents = _a.sent();
                     renderDocuments(documents);
+                    createDocBtn = document.getElementById("create-doc-btn");
+                    createDocBtn.addEventListener("click", toggleModal);
+                    closeModalBtn = document.getElementById("close-modal-btn");
+                    closeModalBtn.addEventListener("click", toggleModal);
                     return [2 /*return*/];
             }
         });

@@ -70,9 +70,26 @@ function renderDocuments(documents: document[]): void {
     });
 }
 
+function toggleModal() {
+    console.log("holaaa");
+    
+    const modal = document.getElementsByClassName("modal");
+    modal[0].classList.toggle("hidden");
+    modal[0].classList.toggle("grid");
+    modal[1].classList.toggle("hidden");
+    modal[1].classList.toggle("grid");
+    const body = document.querySelector("body");
+    body.classList.toggle("overflow-hidden");
+}
+
 async function main() {
     const documents = await getDocuments();
     renderDocuments(documents);
+    const createDocBtn = document.getElementById("create-doc-btn");
+    createDocBtn.addEventListener("click", toggleModal)
+    const closeModalBtn = document.getElementById("close-modal-btn");
+    closeModalBtn.addEventListener("click", toggleModal)
+        
 }
 
 main();
