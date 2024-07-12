@@ -85,10 +85,11 @@ function toggleModal() {
 async function main() {
     const documents = await getDocuments();
     renderDocuments(documents);
+
     const createDocBtn = document.getElementById("create-doc-btn");
-    createDocBtn.addEventListener("click", toggleModal)
+    createDocBtn.addEventListener("click", toggleModal);
     const closeModalBtn = document.getElementById("close-modal-btn");
-    closeModalBtn.addEventListener("click", toggleModal)
+    closeModalBtn.addEventListener("click", toggleModal);
         
 }
 

@@ -3,7 +3,19 @@
 @tailwind utilities;
 
 .documento {
-    @apply
+    @apply 
     bg-white
     p-4
+}
+
+.inputField {
+    @apply 
+    mt-2
+    w-full 
+    p-2 
+    rounded-md 
+    border-2 
+    border-gray-300 
+    focus:outline-none 
+    focus:border-stone-400
 }
