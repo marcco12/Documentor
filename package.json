@@ -1,11 +1,11 @@
 {
   "name": "documentor",
   "version": "1.0.0",
-  "main": "logic.js",
+  "main": "./dist/logic.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "module": "module",
+  "type": "module",
   "keywords": [],
   "author": "Marcos",
   "license": "ISC",

@@ -1,11 +1,7 @@
 import { document } from "./types";
 
-export async function getDocuments() {
-    const documents = await fetch("http://localhost:8080/documents").then(res => res.json());
-    return documents as document[];
-}
-
 export function getDocumentElement(
+    id: string,
 	title: string,
 	version: string,
 	contributors: string[],
@@ -16,7 +12,7 @@ export function getDocumentElement(
 	const footer = getDocumentFooter(attachments);
     
     const document = `
-        <div class="documento w-full space-y-4 text-center">
+        <div class="documento w-full space-y-4 text-center" value="${id}">
             ${header}
             ${body}
             ${footer}
@@ -57,10 +53,11 @@ function getDocumentFooter(attachments: string[]): string {
     return footer;
 }
 
-function renderDocuments(documents: document[]): void {
+export function renderDocuments(documents: document[]): void {
     const documentContainer = document.getElementById("documents-grid");
     documents.forEach((document) => {
         const documentElement = getDocumentElement(
+            document.ID,
             document.Title,
             document.Version,
             document.Contributors.map((contributor) => contributor.Name),
@@ -69,29 +66,3 @@ function renderDocuments(documents: document[]): void {
         documentContainer.innerHTML += documentElement;
     });
 }
-
-function toggleModal() {
-    console.log("holaaa");
-    
-    const modal = document.getElementsByClassName("modal");
-    modal[0].classList.toggle("hidden");
-    modal[0].classList.toggle("grid");
-    modal[1].classList.toggle("hidden");
-    modal[1].classList.toggle("grid");
-    const body = document.querySelector("body");
-    body.classList.toggle("overflow-hidden");
-}
-
-async function main() {
-    const documents = await getDocuments();
-    renderDocuments(documents);
-
-    const createDocBtn = document.getElementById("create-doc-btn");
-    createDocBtn.addEventListener("click", toggleModal);
-    const closeModalBtn = document.getElementById("close-modal-btn");
-    closeModalBtn.addEventListener("click", toggleModal);
-        
-}
-
-main();
-
