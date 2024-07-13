@@ -1,4 +1,4 @@
-import type {document as docType} from "./types.js";
+import { getStorageDocuments } from "./document.js";
 
 export function getDocumentElement(
     id: string,
@@ -53,8 +53,18 @@ function getDocumentFooter(attachments: string[]): string {
     return footer;
 }
 
-export function renderDocuments(documents: docType[]): void {
+export function renderDocuments(): void {
+
+    const documents = getStorageDocuments();
+
     const documentContainer = document.getElementById("documents-grid");
+    
+    // Clear the existing documents in the grid before rendering new ones.
+    const createDocBtn = document.getElementById("create-doc-btn");
+    documentContainer.innerHTML = "";
+    documentContainer.appendChild(createDocBtn);
+    
+    // Render the new documents.
     documents.forEach((document) => {
         const documentElement = getDocumentElement(
             document.ID,

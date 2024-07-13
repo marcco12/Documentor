@@ -1,8 +1,7 @@
 import { createDocument } from "./document.js";
+import { renderDocuments } from "./render.js";
 
-function toggleModal() {
-    console.log("holaaa");
-    
+function toggleModal() {    
     const modal = document.getElementsByClassName("modal");
     modal[0].classList.toggle("hidden");
     modal[0].classList.toggle("grid");
@@ -41,6 +40,7 @@ export function formControl () {
        
         const { title, version, contributors, attachments } = getFormValues();
         createDocument(title, version, contributors, attachments);
+        renderDocuments();
         toggleModal();
         clearForm();
     });
