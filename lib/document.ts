@@ -1,4 +1,4 @@
-import { document } from "./types";
+import type { document } from "./types.js";
 
 export async function getServerDocuments() {
     const documents = await fetch("http://localhost:8080/documents").then(res => res.json());

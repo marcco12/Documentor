@@ -1,4 +1,4 @@
-import { createDocument } from "./document";
+import { createDocument } from "./document.js";
 
 function toggleModal() {
     console.log("holaaa");

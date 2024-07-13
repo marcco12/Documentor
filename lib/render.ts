@@ -1,4 +1,4 @@
-import { document } from "./types";
+import type {document as docType} from "./types.js";
 
 export function getDocumentElement(
     id: string,
@@ -12,7 +12,7 @@ export function getDocumentElement(
 	const footer = getDocumentFooter(attachments);
     
     const document = `
-        <div class="documento w-full space-y-4 text-center" value="${id}">
+        <div class="documento w-full space-y-4 text-center border border-stone-600" value="${id}">
             ${header}
             ${body}
             ${footer}
@@ -53,7 +53,7 @@ function getDocumentFooter(attachments: string[]): string {
     return footer;
 }
 
-export function renderDocuments(documents: document[]): void {
+export function renderDocuments(documents: docType[]): void {
     const documentContainer = document.getElementById("documents-grid");
     documents.forEach((document) => {
         const documentElement = getDocumentElement(

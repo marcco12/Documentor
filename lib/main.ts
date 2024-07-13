@@ -1,6 +1,6 @@
-import { getServerDocuments, getStorageDocuments } from "./document";
-import { formControl } from "./form-control";
-import { renderDocuments } from "./render";
+import { getServerDocuments, getStorageDocuments } from "./document.js";
+import { formControl } from "./form-control.js";
+import { renderDocuments } from "./render.js";
 
 async function main() {
     // Copy server documents to local storage and render them
