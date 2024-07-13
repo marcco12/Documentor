@@ -1,5 +1,6 @@
 import { getServerDocuments, getStorageDocuments } from "./document.js";
 import { formControl } from "./form-control.js";
+import { notification } from "./notification.js";
 import { renderDocuments } from "./render.js";
 
 async function main() {
@@ -11,6 +12,7 @@ async function main() {
     }
     renderDocuments();
     formControl();
+    notification();
 }
 
 main();
