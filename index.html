@@ -12,26 +12,40 @@
 	<body
 		class="bg-gray-100 flex flex-col items-center my-4 mx-10 md:mx-[200px]"
 	>
-		<!-- Notification Bubble -->
-		<header
-			class="rounded-md bg-stone-600 flex gap-2 w-fit items-center justify-center py-2 px-3"
-		>
-			<!-- Bell Icon -->
-			<svg
-				class="w-[24px] h-[24px] text-stone-50"
-				aria-hidden="true"
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				fill="currentColor"
-				viewBox="0 0 24 24"
+		<header class="relative w-full flex flex-col items-center justify-center">
+			<!-- Notification Bubble -->
+			<div
+				id="notification-buuble"
+				class="relative rounded-md bg-stone-600 flex gap-2 w-fit items-center justify-center py-2 px-3 cursor-pointer"
 			>
-				<path
-					d="M17.133 12.632v-1.8a5.406 5.406 0 0 0-4.154-5.262.955.955 0 0 0 .021-.106V3.1a1 1 0 0 0-2 0v2.364a.955.955 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C6.867 15.018 5 15.614 5 16.807 5 17.4 5 18 5.538 18h12.924C19 18 19 17.4 19 16.807c0-1.193-1.867-1.789-1.867-4.175ZM8.823 19a3.453 3.453 0 0 0 6.354 0H8.823Z"
-				/>
-			</svg>
+				<!-- Bell Icon -->
+				<svg
+					class="w-[24px] h-[24px] text-stone-50"
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					fill="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						d="M17.133 12.632v-1.8a5.406 5.406 0 0 0-4.154-5.262.955.955 0 0 0 .021-.106V3.1a1 1 0 0 0-2 0v2.364a.955.955 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C6.867 15.018 5 15.614 5 16.807 5 17.4 5 18 5.538 18h12.924C19 18 19 17.4 19 16.807c0-1.193-1.867-1.789-1.867-4.175ZM8.823 19a3.453 3.453 0 0 0 6.354 0H8.823Z"
+					/>
+				</svg>
+				<div class="bg-red-600 rounded-full absolute left-5 bottom-5 min-w-4 h-fit flex items-center justify-center">
+					<span class="text-white text-sm">3</span>
+				</div>
 
-			<p class="text-sm text-stone-200">New document added</p>
+				<p class="text-sm text-stone-200">New document added</p>
+			</div>
+			<!-- Last documents created display -->
+			<div id="notification-list" class="absolute top-12 w-80 h-[200px] flex flex-col p-2 overflow-y-auto border border-stone-300 bg-white rounded-md shadow-md">
+				<p class="place-self-center">No document was created</p>
+				<div class="border-b p-1">
+					<p class="text-sm text-stone-700">Edmund Fitzgerald Porter</p>
+                    <p class="text-sm text-stone-500">Alicia Wolf: 2020-08-12</p>
+				</div>
+			</div>
 		</header>
 		<!-- Main Content -->
 		<main class="self-start w-full mt-16">
@@ -149,49 +163,59 @@
 					<!-- Modal Body -->
 					<div class="space-y-3">
 						<div>
-							<label for="title-input" class="font-semibold">Title:</label>
-                            <input
-                                type="text"
-                                id="title-input"
-                                class="inputField"
+							<label for="title-input" class="font-semibold"
+								>Title:</label
+							>
+							<input
+								type="text"
+								id="title-input"
+								class="inputField"
 								placeholder="Write your title here"
-                            />
+							/>
 						</div>
 						<div>
-							<label for="version-input" class="font-semibold">Version:</label>
-                            <input
-                                type="text"
-                                id="version-input"
-                                class="inputField"
+							<label for="version-input" class="font-semibold"
+								>Version:</label
+							>
+							<input
+								type="text"
+								id="version-input"
+								class="inputField"
 								placeholder="Write your version here"
-                            />
+							/>
 						</div>
 						<div>
-							<label for="contributor-input" class="font-semibold">Contributor:</label>
-                            <input
-                                type="text"
-                                id="contributor-input"
-                                class="inputField"
+							<label for="contributor-input" class="font-semibold"
+								>Contributor:</label
+							>
+							<input
+								type="text"
+								id="contributor-input"
+								class="inputField"
 								placeholder="Separate contriburor's by ,"
-                            />
+							/>
 						</div>
 						<div>
-							<label for="contributor-input" class="font-semibold">Attachments:</label>
-                            <input
-                                type="text"
-                                id="attachments-input"
-                                class="inputField"
+							<label for="contributor-input" class="font-semibold"
+								>Attachments:</label
+							>
+							<input
+								type="text"
+								id="attachments-input"
+								class="inputField"
 								placeholder="Separate attachments by ,"
-                            />
+							/>
 						</div>
 					</div>
 					<!-- Modal Footer -->
-					 <div>
+					<div>
 						<button
-                            id="save-doc-btn"
-                            class="bg-stone-700 rounded-md p-2 font-semibold flex gap-1 items-center justify-center hover:bg-stone-600 w-full text-white"
-                        >Create</button>
-					 </div>
+							id="save-doc-btn"
+							class="bg-stone-700 rounded-md p-2 font-semibold flex gap-1 items-center justify-center hover:bg-stone-600 w-full text-white"
+						>
+							Create
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
