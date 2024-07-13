@@ -4,12 +4,13 @@
       "target": "ES6",
       "sourceMap": true,
       "lib": ["ES2015", "DOM"],
+      "skipLibCheck": true,
       "outDir": "./dist"
     },
     "include": [
       "./lib/**/*.ts"
     ],
     "exclude": [
-      "node_modules"
+      "./node_modules"
     ]
   }
