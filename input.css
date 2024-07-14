@@ -19,3 +19,9 @@
     focus:outline-none 
     focus:border-stone-400
 }
+
+.selected-view {
+    @apply
+    rounded-full
+    bg-stone-300
+}
