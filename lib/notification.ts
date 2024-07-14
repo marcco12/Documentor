@@ -33,12 +33,22 @@ function addNotification(title: string, user: string, timestamp: Date) {
         toggleNotificationBox();
     }
 
-    const notificationCount = document.getElementById("notification-count");
-    notificationCount.textContent = `${parseInt(notificationCount.textContent) + 1}`;
-
-    const notificationList = document.getElementById("notification-box");
+    const notificationBox = document.getElementById("notification-box");
     
-    notificationList.innerHTML += `
+    // Only update the notification count if the notification box is hidden
+    if (notificationBox.classList.contains("hidden")) {
+        const notificationCount = document.getElementById("notification-count");
+        const currentCount = parseInt(notificationCount.textContent);
+        
+        // Limit the number of notifications to 20 to prevent overflow
+        if (currentCount >= 20) {
+            notificationCount.textContent = "+20";
+        } else if (currentCount < 20) {
+            notificationCount.textContent = `${currentCount + 1}`;
+        }
+    }
+    
+    notificationBox.innerHTML += `
         <div class="border-b p-1">
 		    <p class="text-sm text-stone-700">${title}</p>
             <p class="text-sm text-stone-500">${user} - ${createdAt.getFullYear()}</p>

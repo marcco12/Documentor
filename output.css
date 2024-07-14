@@ -707,6 +707,10 @@ video {
   top: 3rem;
 }
 
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -968,6 +972,22 @@ video {
 
 .min-w-4 {
   min-width: 1rem;
+}
+
+.min-w-5 {
+  min-width: 1.25rem;
+}
+
+.min-w-6 {
+  min-width: 1.5rem;
+}
+
+.min-w-8 {
+  min-width: 2rem;
+}
+
+.min-w-7 {
+  min-width: 1.75rem;
 }
 
 .flex-shrink {
@@ -2155,6 +2175,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2229,6 +2254,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold {
