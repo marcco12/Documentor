@@ -20,3 +20,5 @@ export interface document {
 	Contributors: user[];
 	Version: string;
 }
+
+export type sortFields = "Title" | "Version" | "CreatedAt";

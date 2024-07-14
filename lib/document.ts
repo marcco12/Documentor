@@ -25,7 +25,3 @@ export async function createDocument(title: string, version: string, contributor
 
     localStorage.setItem("documents", JSON.stringify([...existingDocuments, document]));
 }
-
-export async function updateDocument(documentID: string, updatedTitle: string, updatedVersion: string, updatedContributors: string[], updatedAttachments: string[]): Promise<void> {
-    
-}

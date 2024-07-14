@@ -1,4 +1,5 @@
 import { getStorageDocuments } from "./document.js";
+import type { document as docType, sortFields } from "./types.js";
 
 export function getDocumentElement(
     id: string,
@@ -53,9 +54,21 @@ function getDocumentFooter(attachments: string[]): string {
     return footer;
 }
 
-export function renderDocuments(): void {
+export function sortDocuments(documents: docType[], sortBy: sortFields ) {
+    return documents.sort((a, b) => {
+        if (sortBy === "CreatedAt") {
+            // The recent one comes first.
+            return new Date(b.CreatedAt).getTime() - new Date(a.CreatedAt).getTime();
+        } else {
+            return a[sortBy].localeCompare(b[sortBy]);
+        }
+    }); 
+}
+
+export function renderDocuments(sortBy: sortFields): void {
 
     const documents = getStorageDocuments();
+    const sortedDocuments = sortDocuments(documents, sortBy);
 
     const documentContainer = document.getElementById("documents-grid");
     
@@ -65,7 +78,7 @@ export function renderDocuments(): void {
     documentContainer.appendChild(createDocBtn);
     
     // Render the new documents.
-    documents.forEach((document) => {
+    sortedDocuments.forEach((document) => {
         const documentElement = getDocumentElement(
             document.ID,
             document.Title,

@@ -10,7 +10,11 @@ async function main() {
         const serverDocuments = await getServerDocuments();
         localStorage.setItem("documents", JSON.stringify([...serverDocuments]));
     }
-    renderDocuments();
+
+    //Stablish the sortBy default method
+    localStorage.setItem("sortBy", "CreatedAt");
+    
+    renderDocuments("CreatedAt");
     formControl();
     notification();
 }

@@ -1,5 +1,6 @@
 import { createDocument } from "./document.js";
 import { renderDocuments } from "./render.js";
+import { sortFields } from "./types.js";
 
 function toggleModal() {    
     const modal = document.getElementsByClassName("modal");
@@ -40,7 +41,9 @@ export function formControl () {
        
         const { title, version, contributors, attachments } = getFormValues();
         createDocument(title, version, contributors, attachments);
-        renderDocuments();
+
+        const sortBy = localStorage.getItem("sortBy") as sortFields;
+        renderDocuments(sortBy);
         toggleModal();
         clearForm();
     });
