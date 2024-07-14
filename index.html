@@ -12,7 +12,9 @@
 	<body
 		class="bg-gray-100 flex flex-col items-center my-4 mx-10 md:mx-[200px]"
 	>
-		<header class="relative w-full flex flex-col items-center justify-center">
+		<header
+			class="relative w-full flex flex-col items-center justify-center"
+		>
 			<!-- Notification Bubble -->
 			<div
 				id="notification-bubble"
@@ -32,30 +34,46 @@
 						d="M17.133 12.632v-1.8a5.406 5.406 0 0 0-4.154-5.262.955.955 0 0 0 .021-.106V3.1a1 1 0 0 0-2 0v2.364a.955.955 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C6.867 15.018 5 15.614 5 16.807 5 17.4 5 18 5.538 18h12.924C19 18 19 17.4 19 16.807c0-1.193-1.867-1.789-1.867-4.175ZM8.823 19a3.453 3.453 0 0 0 6.354 0H8.823Z"
 					/>
 				</svg>
-				<div 
+				<div
 					id="notification-count-circle"
 					class="bg-red-600 rounded-full absolute left-5 bottom-5 min-w-4 h-fit flex items-center justify-center"
 				>
-					<span id="notification-count" class="text-white text-sm">0</span>
+					<span id="notification-count" class="text-white text-sm"
+						>0</span
+					>
 				</div>
 
 				<p class="text-sm text-stone-200">New document added</p>
 			</div>
 			<!-- Last documents created display -->
-			<div id="notification-box" class="absolute top-12 w-80 h-[200px] hidden flex-col p-2 overflow-y-auto border border-stone-300 bg-white rounded-md shadow-md">
-			</div>
+			<div
+				id="notification-box"
+				class="absolute top-12 w-80 h-[200px] hidden flex-col p-2 overflow-y-auto border border-stone-300 bg-white rounded-md shadow-md"
+			></div>
 		</header>
 		<!-- Main Content -->
 		<main class="self-start w-full mt-16">
 			<h1 class="text-2xl text-stone-600 font-bold">Documents</h1>
 			<!-- Filters -->
 			<div class="flex justify-between items-center mt-4">
-				<p>Sort by: <span>Select</span></p>
+				<!-- Sort Filter -->
+				<div class="flex items-center justify-center gap-2">
+					<p>Sort by:</p>
+					<select
+						id="sortBy-selector"
+						name="sortBy-list"
+						class="bg-transparent text-blue-500 underline cursor-pointer"
+					>
+						<option value="CreatedAt">Created At</option>
+						<option value="Title">Name</option>
+						<option value="Version">Version</option>
+					</select>
+				</div>
 				<!-- Selector -->
 				<div class="flex gap-1 items-center">
 					<!-- List view -->
 					<svg
-						class="w-9 h-9 text-gray-800 dark:text-white cursor-pointer"
+						class="w-8 h-8 text-gray-800 rounded-full cursor-pointer"
 						aria-hidden="true"
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"
@@ -73,7 +91,7 @@
 
 					<!-- Grid View Icon -->
 					<svg
-						class="w-6 h-6 text-gray-800 dark:text-white cursor-pointer"
+						class="w-8 h-8 text-gray-800 p-1 cursor-pointer"
 						aria-hidden="true"
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"
