@@ -26,12 +26,6 @@ function toggleNotificationBox() {
 
 function addNotification(title: string, user: string, timestamp: Date) {
     const createdAt = new Date(timestamp);
-    
-    const notifications = localStorage.getItem("notifications") || "[]";
-    const notificationsArray = JSON.parse(notifications);
-    if (notificationsArray.length === 0) {
-        toggleNotificationBox();
-    }
 
     const notificationBox = document.getElementById("notification-box");
     

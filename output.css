@@ -683,8 +683,8 @@ video {
   inset: -0.25rem;
 }
 
-.bottom-5 {
-  bottom: 1.25rem;
+.bottom-6 {
+  bottom: 1.5rem;
 }
 
 .end-1 {
@@ -705,10 +705,6 @@ video {
 
 .top-12 {
   top: 3rem;
-}
-
-.bottom-6 {
-  bottom: 1.5rem;
 }
 
 .isolate {
@@ -779,6 +775,10 @@ video {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
 }
 
 .mt-16 {
@@ -972,22 +972,6 @@ video {
 
 .min-w-4 {
   min-width: 1rem;
-}
-
-.min-w-5 {
-  min-width: 1.25rem;
-}
-
-.min-w-6 {
-  min-width: 1.5rem;
-}
-
-.min-w-8 {
-  min-width: 2rem;
-}
-
-.min-w-7 {
-  min-width: 1.75rem;
 }
 
 .flex-shrink {
@@ -1538,12 +1522,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-}
-
-.space-y-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .space-y-5 > :not([hidden]) ~ :not([hidden]) {
@@ -2165,6 +2143,11 @@ video {
   padding: 2rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2173,11 +2156,6 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .text-left {
@@ -2762,9 +2740,23 @@ video {
 }
 
 .documento {
+  width: 100%;
+}
+
+.documento > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.documento {
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(214 211 209 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 1rem;
+  text-align: center;
 }
 
 .inputField {

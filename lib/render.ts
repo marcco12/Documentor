@@ -13,7 +13,7 @@ export function getDocumentElement(
 	const footer = getDocumentFooter(attachments);
     
     const document = `
-        <div class="documento w-full space-y-4 text-center border border-stone-300" value="${id}">
+        <div class="documento" name="${id}">
             ${header}
             ${body}
             ${footer}
@@ -34,7 +34,7 @@ function getDocumentHeader(title: string, version: string): string {
 
 function getDocumentBody(contributors: string[]): string {
 	const body = `
-        <div>
+        <div class="mt-0">
             ${contributors
 				.map((contributor) => `<p>${contributor}</p>`)
 				.join("")}
@@ -45,7 +45,7 @@ function getDocumentBody(contributors: string[]): string {
 
 function getDocumentFooter(attachments: string[]): string {
     const footer = `
-        <div>
+        <div class="mt-0">
             ${attachments
                 .map((attachment) => `<p>${attachment}</p>`)
                 .join("")}
