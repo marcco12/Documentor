@@ -13,7 +13,7 @@ export function getDocumentElement(
 	const footer = getDocumentFooter(attachments);
     
     const document = `
-        <div class="documento" name="${id}">
+        <div class="documento space-y-4" name="${id}">
             ${header}
             ${body}
             ${footer}

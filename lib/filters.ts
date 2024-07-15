@@ -56,6 +56,7 @@ function switchView (event: Event) {
         documento.classList.toggle('grid');
         documento.classList.toggle('grid-cols-3');
         documento.classList.toggle('items-center');
+        documento.classList.toggle('space-y-4');
     });
 
 }
