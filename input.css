@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.documento {
+.document {
     @apply 
     bg-white
     p-4 

@@ -1,4 +1,5 @@
-import type { document } from "./types.js";
+import { renderDocuments } from "./render.js";
+import type { document, sortFields } from "./types.js";
 
 export async function getServerDocuments() {
     const documents = await fetch("http://localhost:8080/documents").then(res => res.json());
@@ -24,4 +25,27 @@ export async function createDocument(title: string, version: string, contributor
     const existingDocuments = getStorageDocuments();
 
     localStorage.setItem("documents", JSON.stringify([...existingDocuments, document]));
+}
+
+export function deleteDocument(id: string): void {
+    console.log(id);
+    
+    // Update the localStorage
+    const existingDocuments = getStorageDocuments();
+    const updatedDocuments = existingDocuments.filter((doc) => doc.ID!== id);
+    localStorage.setItem("documents", JSON.stringify(updatedDocuments));
+
+    // Render the updated documents
+    const sortBy = localStorage.getItem("sortBy") as sortFields;
+    renderDocuments(sortBy);
+}
+
+export function prepareDocuments () {
+    const documents = document.querySelectorAll("#documents-grid > div:not(:first-child)");
+
+    Array.from(documents).forEach((document) => {
+        document.addEventListener("click", (event) => {
+            deleteDocument((event.target as HTMLElement).getAttribute("name"));
+        });
+    });
 }

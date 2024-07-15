@@ -2415,6 +2415,10 @@ video {
   opacity: 0.5;
 }
 
+.opacity-75 {
+  opacity: 0.75;
+}
+
 .bg-blend-normal {
   background-blend-mode: normal;
 }
@@ -2745,7 +2749,7 @@ video {
   a-z-a--z0-9: \\-\\. $;
 }
 
-.documento {
+.document {
   width: 100%;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -2825,6 +2829,11 @@ video {
   background-color: rgb(87 83 78 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-stone-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 37 36 / var(--tw-bg-opacity));
+}
+
 .hover\:font-bold:hover {
   font-weight: 700;
 }
@@ -2850,6 +2859,10 @@ video {
 
 .hover\:focus\:text-center:focus:hover {
   text-align: center;
+}
+
+.group:hover .group-hover\:block {
+  display: block;
 }
 
 @media (min-width: 640px) {
