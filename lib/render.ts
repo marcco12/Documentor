@@ -1,4 +1,5 @@
 import { getStorageDocuments, prepareDocuments } from "./document.js";
+import { createDocControl } from "./form-control.js";
 import type { document as docType, sortFields } from "./types.js";
 
 export function getDocumentElement(
@@ -112,5 +113,6 @@ export function renderDocuments(sortBy: sortFields): void {
         documentContainer.innerHTML += documentElement;
     });
 
+    createDocControl();
     prepareDocuments();
 }

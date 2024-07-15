@@ -1,3 +1,4 @@
+import { formControl } from "./form-control.js";
 import { renderDocuments } from "./render.js";
 import type { document, sortFields } from "./types.js";
 
@@ -28,8 +29,6 @@ export async function createDocument(title: string, version: string, contributor
 }
 
 export function deleteDocument(id: string): void {
-    console.log(id);
-    
     // Update the localStorage
     const existingDocuments = getStorageDocuments();
     const updatedDocuments = existingDocuments.filter((doc) => doc.ID!== id);

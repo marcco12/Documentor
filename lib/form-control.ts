@@ -31,9 +31,15 @@ export function getFormValues () {
     return { title, version, contributors, attachments };
 }
 
-export function formControl () {
+export function createDocControl () {
     const createDocBtn = document.getElementById("create-doc-btn");
     createDocBtn.addEventListener("click", toggleModal);
+}
+
+export function formControl () {
+
+    createDocControl();
+
     const closeModalBtn = document.getElementById("close-modal-btn");
     closeModalBtn.addEventListener("click", toggleModal);
     const saveDocBtn = document.getElementById("save-doc-btn");
