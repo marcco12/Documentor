@@ -42,10 +42,12 @@ function addNotification(title: string, user: string, timestamp: Date) {
         }
     }
     
-    notificationBox.innerHTML += `
+    const newNotification = `
         <div class="border-b p-1">
 		    <p class="text-sm text-stone-700">${title}</p>
-            <p class="text-sm text-stone-500">${user} - ${createdAt.getFullYear()}</p>
+            <p class="text-sm text-stone-500">${user} - ${createdAt.toLocaleString()}</p>
 		</div>
     `;
+    
+    notificationBox.insertAdjacentHTML("afterbegin", newNotification);
 }
