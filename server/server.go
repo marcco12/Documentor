@@ -126,5 +126,7 @@ func main() {
 	http.HandleFunc("/notifications", notifications)
 	http.HandleFunc("/documents", api)
 
+	log.Println("Server is running")
+
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }

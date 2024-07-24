@@ -7,7 +7,8 @@
     "tailwindcss": "npx tailwindcss -i ./input.css -o ./output.css --watch",
     "typescript": "npx tsc --watch",
     "build": "npx tsc && npx tailwindcss -i ./input.css -o ./output.css",
-    "start": "node ./server.js"
+    "start:frontend": "node ./server.js",
+    "start:backend": "cd ./server && go run server.go"
   },
   "keywords": [],
   "type": "module",
